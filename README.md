@@ -6,20 +6,20 @@
 Brussels, Belgium
 ([preselected metropolitan area](https://s3.amazonaws.com/metro-extracts.mapzen.com/brussels_belgium.osm.bz2) downloaded from Map Zen
 )
-The dataset – as downloaded via Map Zen – is in ‘brussels_belgium.osm’.
+The dataset – as downloaded via Map Zen has been extracted into `brussels_belgium.osm`.
 
 
 I like Brussels! I lived in the city for five years and I still visit quite often. I was interested to see what the dataset could tell us about the city. I also thought that it would become an interesting exercise: Brussels is a bilingual city with a complicated administrative structure; I assumed the problems in cleaning the dataset would be very different form those in the lessons. 
 
 
 ## Data wrangling - challenges and problems in the dataset
-I started exploring the dataset using a series of the dataset samples of the dataset with increasing size. I used the scripts in brussels-exploration.py and focused on street names, cities names and postcodes. Exploring the dataset I found three issues:
+I started exploring the dataset using a series of the dataset samples of the dataset with increasing size. I used the scripts in `wrangled_brussels.py` and focused on street names, cities names and postcodes. Exploring the dataset I found three issues:
 
 - Cities and streets have very often two official names – in French and Dutch 
 - Errors in postal codes notation 
 - French accents in cities and street names
 
-For all the following edits I used the same function fix_osm. All details on the wrangling and cleaning process is in cleaning_brussels.ipynb. 
+For all the following edits I used the same function fix_osm. All details on the wrangling and cleaning process is in `cleaning_brussels.ipynb`. 
 
 ### Encoding
 Many names of street and cities in this dataset contain French accents (eg. à, ç, è). This in itself would not be a problem, as the osm file is encoded in unicode. However, python outputs unicode characters as strings: the French `"Chaussée"` becomes `"u'Chauss\xe9e"`, `"Avenue des Frères Becqué"` becomes `"u'Avenue des Fr\xe8res Becqu\xe9"` etc. 
@@ -84,17 +84,17 @@ Similarly for streets, out of 395,412 instances of street name, 221,764 (56%) is
 
 Separate tags for French and Dutch names (option 3) for all places offer the most systematic approach. Alas, to describe each node in the map with these language-specific keys, we need additional information. We don't know both the French and Dutch names for all cities and streets in the dataset, and we don't know the language region they are in. Lastly, it is not particularly popular practice among the users: of all the nodes with cities and streets, only 8% (for cities) and 1% (for streets) have separate tags for French and Dutch names.
 
-To bring some consistency into this chaos, I opted for a more realistic (and less ambitious) approach. I changed the value for cities and streets in cases where I could find the name of a city or a street in both French and Dutch (ie. there is at least one tag that contains both names, as in: `<tag k="addr:city" v="Bruxelles - Brussel"/>`). In those cases, the functions ‘build_dict’ and fix_osm check each tag with city and street and change their value to the bilingual form. 
+To bring some consistency into this chaos, I opted for a more realistic (and less ambitious) approach. I changed the value for cities and streets in cases where I could find the name of a city or a street in both French and Dutch (ie. there is at least one tag that contains both names, as in: `<tag k="addr:city" v="Bruxelles - Brussel"/>`). In those cases, the functions `build_dict` and `fix_osm` check each tag with city and street and change their value to the bilingual form. 
 
 However, cities and streets that exist in the dataset only in French or in Dutch (or indeed that are sometimes registered in French and sometimes in Dutch but never in both languages) remained unchanged. After thorough investigation of the dataset, I don't think there are many cases like this, but I cannot be certain. I would need to match the French and Dutch of each particular city, using a list of all streets and cities in the map with their French and Dutch names. I don't have such a list. 
 
 #### Misspellings and typos
-There were also a few typos, inconsistent spellings and other irregularities in the names of street and cities. I created a list of these cases based on previous exploration (see cleaning_brussels.ipynb). 
+There were also a few typos, inconsistent spellings and other irregularities in the names of street and cities. I created a list of these cases based on previous exploration (see `cleaning_brussels.ipynb`). 
 
 ##### Cities
 I printed out a list of all cities in the dataset and inspected them manually to see if there were some duplicate spellings and other problems. 
 
-Examples of the inconsistencies for cities (the full list is in cleaning_brussels.ipynb):
+Examples of the inconsistencies for cities (the full list is in `cleaning_brussels.ipynb`):
 
 ```xml
 <tag k="addr:city" v="Heist-Op-Den-Berg">
@@ -200,13 +200,13 @@ Seemingly it doesn't make sense to have three different post codes to denote an 
 
 ## Export
 
-To export the resulting osm file into SQL database, I first exported selected data into a series of csv files, using the methods in export.py file. The csv file were then imported into SQL database 'brussels.db', which follows the schema provided in the 'schema.py'. 
+To export the resulting osm file into SQL database, I first exported selected data into a series of csv files, using the methods in `export.py` file. The csv file were then imported into SQL database `brussels.db`, which follows the schema provided in the `schema.py`. 
 
 
 
 ## Data Overview
 
-This section provides a basic overview of the data in brussels.db. I ran the sql queries, using python's sqlite3 library. All queries are in brussels-exploration.py.
+This section provides a basic overview of the data in brussels.db. I ran the sql queries, using python's sqlite3 library. All queries are in `cleaning_brussels.md`.
 
 ### File sizes
 ```
