@@ -4,7 +4,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Export osm file into csv to prepare the data to be inserted into a SQL database. These csv files can then easily be imported to a SQL database as tables.
+Export osm file into csv to prepare the data to be inserted into a SQL database. These csv files can then easily be imported to a
+SQL database as tables.
 
 The process for this transformation is as follows:
 - Use iterparse to iteratively step through each top level element in the XML
