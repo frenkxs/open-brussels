@@ -70,7 +70,7 @@ The function 'process_names' looks at how frequent each of the above categories 
 'addr:city:fr': ............... 7285
 'addr:city:mono': ............ 41350
 'addr:city:nl': ............... 7285
-'addr:street:bi': ............221764
+'addr:street:bi': ........... 221764
 'addr:street:fr': ............. 7325
 'addr:street:mono': ......... 173648
 'addr:street:nl': ............. 7324
