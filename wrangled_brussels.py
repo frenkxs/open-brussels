@@ -251,7 +251,8 @@ def process_names(filename):
                     names[item] += 1
     
 #    To get the total number of nodes/ways/relations with street/cities, we only sum up monolingual and bilingual tags. 
-#    Nodes, ways or relations with dedicated tags for each language version, also have bilingual tags, so they are already included in the bilingual tags.
+#    Nodes, ways or relations with dedicated tags for each language version, also have bilingual tags, so they are already 
+#    included in the bilingual tags.
     names['city_total'] = sum((names['addr:city:bi'], names['addr:city:mono']))                    
     names['street_total'] = sum((names['addr:street:bi'], names['addr:street:mono']))                    
         
