@@ -3,8 +3,7 @@
 #### Premysl Velek | June 2016
 
 ### Map Area
-Brussels, Belgium
-([preselected metropolitan area](https://s3.amazonaws.com/metro-extracts.mapzen.com/brussels_belgium.osm.bz2) downloaded from Map Zen: [https://mapzen.com/data/metro-extracts/#brussels-belgium](https://mapzen.com/data/metro-extracts/#brussels-belgium).
+Brussels, Belgium preselected metropolitan area downloaded from Map Zen: [https://mapzen.com/data/metro-extracts/#brussels-belgium](https://mapzen.com/data/metro-extracts/#brussels-belgium).
 
 The dataset – as downloaded via Map Zen has been extracted into `brussels_belgium.osm` (The sample dataset is in `sample.osm`).
 
