@@ -360,7 +360,6 @@ I realise however, that it is quite ambitious plan and perhaps not very practica
 
 ## References
 - Schema, scripts and guidance provided in the OpenStreetMap Case study: https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075461/lessons/5436095827/concepts/54908788190923 
-
 - Udacity Forum: Changing attribute value in XML: https://discussions.udacity.com/t/changing-attribute-value-in-xml/44575/6 
 - Stackoverflow: writing back into the same file after reading from the file: http://stackoverflow.com/questions/17646680/writing-back-into-the-same-file-after-reading-from-the-file 
 - lxml library documentation: http://lxml.de/parsing.html
