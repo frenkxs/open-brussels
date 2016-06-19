@@ -66,11 +66,11 @@ Naming conventions in the dataset are chaotic and inconsistent. Like [tourists f
 The function 'process_names' looks at how frequent each of the above categories are:
 
 ```python
-'addr:city:bi'......... 43997
+'addr:city:bi'................ 43997
 'addr:city:fr': ............... 7285
 'addr:city:mono': ............ 41350
 'addr:city:nl': ............... 7285
-'addr:street:bi': .....221764
+'addr:street:bi': ............221764
 'addr:street:fr': ............. 7325
 'addr:street:mono': ......... 173648
 'addr:street:nl': ............. 7324
@@ -79,6 +79,7 @@ The function 'process_names' looks at how frequent each of the above categories 
 ````
 
 The two basic naming conventions - to include only one version of the name (monolingual, 'mono'), and to include both language versions (bilingual, 'bi') are equally represented in the dataset. The dataset contains 85,347 instances of nodes with cities in the dataset, out of which 43,997 (~51%) is bilingual and 41,350 (49%) monolingual. 
+
 Similarly for streets, out of 395,412 instances of street name, 221,764 (56%) is bilingual, the rest (173,648, 44%) is monolingual. (The instances with dedicated tags for each language version always include a tag with bilingual names, so they are already included in the figures for bilingual tags.)
 
 Separate tags for French and Dutch names (option 3) for all places offer the most systematic approach. Alas, to describe each node in the map with these language-specific keys, we need additional information. We don't know both the French and Dutch names for all cities and streets in the dataset, and we don't know the language region they are in. Lastly, it is not particularly popular practice among the users: of all the nodes with cities and streets, only 8% (for cities) and 1% (for streets) have separate tags for French and Dutch names.
@@ -142,7 +143,7 @@ The exact location of the third tag will remain a mystery. It was not possible t
 {'k': 'name', 'v': 'Vuntcomplex'}
 {'role': 'street', 'ref': '4004855', 'type': 'way'}
 ```
-But I couldn't assign it either to Kessel-Lo, or to Wilsele: [google maps say the street Vuntcomplex is right in between Wilsele and Kessel-Lo](https://www.google.co.uk/maps/place/Vuntcomplex,+Leuven,+Belgium/
+But I couldn't assign it either to Kessel-Lo, or to Wilsele: [google map says the street Vuntcomplex is right in between Wilsele and Kessel-Lo](https://www.google.co.uk/maps/place/Vuntcomplex,+Leuven,+Belgium/
 @50.9071151,4.6814566,13z/data=!4m5!3m4!1s0x47c160b27c61e455:0xfb240be5198f98f4!8m2!3d50.9071151!4d4.7164755). As the next best solution, I replaced the value 'Kessel-Lo;Wilsele' with 'Leuven' (Kessel-Lo and Wilsele are quarters of the Flemish city of Leuven).
 
 I used the same procedure for language specific tags for cities (`addr:city:fr`, `addr:city:nl`). - There was only one case of misspelling (bruxelles with lower case 'b').
@@ -173,7 +174,7 @@ Again, I used the same procedure for language specific tags with streets (`addr:
 
                                                 * * *
 
-Having inspected the outcome of the exploration phase, I created a dictionary of fixes for streets and cities and passed it as argument to the fix_osm function (the dictionaries are in cleaning_brussels.ipynb).
+Having inspected the outcome of the exploration phase, I created a dictionary of fixes for streets and cities and passed it as argument to the fix_osm function (the dictionaries are in `cleaning_brussels.ipynb`).
 
 
 #### Post codes
@@ -212,9 +213,9 @@ This section provides a basic overview of the data in brussels.db. I ran the sql
 brussels_belgium.osm ..... 1,090 MB
 brussels.db .............. 646.6 MB
 nodes.csv ................ 366.7 MB
-nodes_tags.csv ........... 22 MB
-ways.csv ................. 46.3 MB
-ways_tags.csv ............ 83.1 MB
+nodes_tags.csv .............. 22 MB
+ways.csv .................. 46.3 MB
+ways_tags.csv ............. 83.1 MB
 ways_nodes.cv ............ 154.9 MB  
 ```  
 
