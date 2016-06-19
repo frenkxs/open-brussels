@@ -365,4 +365,4 @@ I realise however, that it is quite ambitious plan and perhaps not very practica
 - Stackoverflow: writing back into the same file after reading from the file: http://stackoverflow.com/questions/17646680/writing-back-into-the-same-file-after-reading-from-the-file 
 - lxml library documentation: http://lxml.de/parsing.html
 
-I would like to especially thank both martin-martin and myles – the main contributors to the Udacity forum. Without their insights, I wouldn’t not be able to finish this projects.
+I would especially like to thank both martin-martin and myles – the main contributors to the Udacity forum listed above. Without their insights, I wouldn’t not be able to finish this projects.
