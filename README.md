@@ -177,8 +177,8 @@ Again, I used the same procedure for language specific tags with streets (`addr:
 Having inspected the outcome of the exploration phase, I created a dictionary of fixes for streets and cities and passed it as argument to the fix_osm function (the dictionaries are in `cleaning_brussels.ipynb`).
 
 
-#### Post codes
-A post code in Belgium has four digits, (eg: 1130). The notation of postcodes is relatively consistent, with only a few problems:
+#### Postcodes
+A postcode in Belgium has four digits, (eg: 1130). The notation of postcodes is relatively consistent, with only a few problems:
 ```xml
 <tag k = "addr:post_code" v = "B 1040">
 <tag k = "addr:post_code" v = "3120 Tremelo">
