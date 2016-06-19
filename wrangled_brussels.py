@@ -156,7 +156,7 @@ def build_dict(filename, address):
                             names[tag.attrib['v']] = tag.attrib['v']
                             names[splitted[0]] = tag.attrib['v']
                             names[splitted[1]] = tag.attrib['v']
-                            names[splitted[1] + ' - ' + splitted[0]] =                                                                 tag.attrib['v']
+                            names[splitted[1] + ' - ' + splitted[0]] = tag.attrib['v']
                       
     return names
 
