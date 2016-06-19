@@ -7,7 +7,7 @@ Brussels, Belgium preselected metropolitan area downloaded from Map Zen: [https:
 
 The dataset – as downloaded via Map Zen has been extracted into `brussels_belgium.osm` (The sample dataset is in `sample.osm`).
 
-
+### Why Brussels
 I like Brussels! I lived in the city for five years and I still visit quite often. I was interested to see what the dataset could tell us about the city. I also thought that it would become an interesting exercise: Brussels is a bilingual city with a complicated administrative structure; I assumed the problems in cleaning the dataset would be very different form those in the lessons. 
 
 
