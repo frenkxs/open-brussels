@@ -1,4 +1,4 @@
-# OpenStreetMap Data Case Study
+# OpenStreetMap Data cleaning Case Study
 
 #### Premysl Velek | June 2016
 
